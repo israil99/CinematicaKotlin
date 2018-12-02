@@ -1,5 +1,8 @@
 package com.neobis.israil.cinematicakotlin.model.newMovies
 
+import android.os.Parcel
+import android.os.Parcelable
+
 data class Result(
         val id: Int,
         val name: String,
@@ -13,11 +16,41 @@ data class Result(
         val trailers_count: Int,
         val photos_count: Int,
         val sess_has: Int,
-        val is3d: Any,
         val before: String,
-        val entered: String,
-        val worldwide: Any,
-        val is_b: Boolean,
-        val b_link: Boolean,
-        val age_limit: Any
-)
+        val entered: String
+):Parcelable{
+    constructor(parcel: Parcel) : this(
+            parcel.readInt(),
+            parcel.readString(),
+            parcel.readString(),
+            parcel.readString(),
+            parcel.readString(),
+            parcel.readString(),
+            parcel.readString(),
+            parcel.readInt(),
+            parcel.readInt(),
+            parcel.readInt(),
+            parcel.readInt(),
+            parcel.readInt(),
+            parcel.readString(),
+            parcel.readString())
+
+
+    override fun writeToParcel(dest: Parcel?, flags: Int) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun describeContents(): Int {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    companion object CREATOR : Parcelable.Creator<Result> {
+        override fun createFromParcel(parcel: Parcel): Result {
+            return Result(parcel)
+        }
+
+        override fun newArray(size: Int): Array<Result?> {
+            return arrayOfNulls(size)
+        }
+    }
+}
