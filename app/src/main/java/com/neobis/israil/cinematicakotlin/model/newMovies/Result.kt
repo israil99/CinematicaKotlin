@@ -35,13 +35,25 @@ data class Result(
             parcel.readString(),
             parcel.readString())
 
-
-    override fun writeToParcel(dest: Parcel?, flags: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeInt(id)
+        parcel.writeString(name)
+        parcel.writeString(url)
+        parcel.writeString(image)
+        parcel.writeString(countries)
+        parcel.writeString(actors)
+        parcel.writeString(rejisser)
+        parcel.writeInt(comments_count)
+        parcel.writeInt(reviews_count)
+        parcel.writeInt(trailers_count)
+        parcel.writeInt(photos_count)
+        parcel.writeInt(sess_has)
+        parcel.writeString(before)
+        parcel.writeString(entered)
     }
 
     override fun describeContents(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return 0
     }
 
     companion object CREATOR : Parcelable.Creator<Result> {
@@ -53,4 +65,6 @@ data class Result(
             return arrayOfNulls(size)
         }
     }
+
+
 }

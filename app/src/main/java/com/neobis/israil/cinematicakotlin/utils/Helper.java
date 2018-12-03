@@ -15,5 +15,17 @@ public class Helper {
         return stringBuilder.toString();
     }
 
+    public static String makeImageBest(String url) {
+        StringBuffer temp = new StringBuffer(url);
+        for (int i = temp.length() - 1; i > 0; i--) {
+            if (temp.charAt(i) == '/') {
+                temp.deleteCharAt(i + 1);
+                temp.deleteCharAt(i + 1);
+                temp.deleteCharAt(i + 1);
+                return temp.toString();
+            }
+        }
+        return temp.toString();
+    }
 
 }

@@ -7,7 +7,7 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         >
 
         <LinearLayout
@@ -18,11 +18,10 @@
 
             <ImageView
                 android:id="@+id/movie_image"
-                android:layout_width="190dp"
-                android:layout_height="240dp"
+                android:layout_width="match_parent"
+                android:layout_height="340dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:background="#2d2d2d"
+                android:background="@color/colorPrimaryDark"
                 android:scaleType="centerCrop" />
 
             <TextView
@@ -37,6 +36,11 @@
                 android:textStyle="bold"
 
                 />
+            <View
+                android:id="@+id/SplitLine_hor1"
+                android:layout_width="match_parent"
+                android:layout_height= "2dp"
+                android:background="@color/colorGray" />
             <TextView
                 android:id="@+id/movie_countries"
                 android:layout_width="wrap_content"
@@ -58,7 +62,7 @@
 
                 />
             <TextView
-                android:id="@+id/movie_description"
+                android:id="@+id/movie_actors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Актеры"
