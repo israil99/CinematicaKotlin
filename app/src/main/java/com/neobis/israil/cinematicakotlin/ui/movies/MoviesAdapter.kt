@@ -42,9 +42,6 @@ class MoviesAdapter(var list: MutableList<Any>, private var listener: Listener) 
 
             itemView.tag = post
 
-
-
-
             itemView.setOnClickListener { v ->
                 val mPost = v.tag as Result
 

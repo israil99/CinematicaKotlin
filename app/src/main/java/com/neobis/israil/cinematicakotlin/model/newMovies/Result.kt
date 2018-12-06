@@ -11,7 +11,7 @@ data class Result(
         val countries: String,
         val actors: String,
         val rejisser: String,
-        val comments_count: Int,
+        val comments_count: String,
         val reviews_count: Int,
         val trailers_count: Int,
         val photos_count: Int,
@@ -27,7 +27,7 @@ data class Result(
             parcel.readString(),
             parcel.readString(),
             parcel.readString(),
-            parcel.readInt(),
+            parcel.readString(),
             parcel.readInt(),
             parcel.readInt(),
             parcel.readInt(),
@@ -43,7 +43,7 @@ data class Result(
         parcel.writeString(countries)
         parcel.writeString(actors)
         parcel.writeString(rejisser)
-        parcel.writeInt(comments_count)
+        parcel.writeString(comments_count)
         parcel.writeInt(reviews_count)
         parcel.writeInt(trailers_count)
         parcel.writeInt(photos_count)

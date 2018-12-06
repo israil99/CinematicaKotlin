@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import com.neobis.israil.cinematicakotlin.R
+import com.neobis.israil.cinematicakotlin.ui.cinemas.CinemasFragment
 import com.neobis.israil.cinematicakotlin.ui.movies.MoviesFragment
 import com.neobis.israil.cinematicakotlin.ui.new_movies.NewMoviesFragment
 

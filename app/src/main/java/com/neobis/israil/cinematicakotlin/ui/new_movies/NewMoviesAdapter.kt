@@ -1,12 +1,14 @@
 package com.neobis.israil.cinematicakotlin.ui.new_movies
 
 
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.neobis.israil.cinematicakotlin.NewMovieDetailsActivity
 import com.neobis.israil.cinematicakotlin.R
 import com.neobis.israil.cinematicakotlin.model.newMovies.Result
 import com.neobis.israil.cinematicakotlin.utils.Helper
@@ -37,14 +39,24 @@ class NewMoviesAdapter(var list: MutableList<Any>, private var listener: Listene
                     .into(itemView.cinema_image)
 
             itemView.tag = post
-/*
-          *//*
 
-            itemView.tag = post
+
+
+
             itemView.setOnClickListener { v ->
-                val mPost = v.tag as Post
-                listener.onPostClicked(mPost)*//*
-            }*/
+                val mPost = v.tag as Result
+
+                var intent = Intent(itemView.context,NewMovieDetailsActivity::class.java)
+                intent.putExtra("newMovieName",mPost.name)
+                intent.putExtra("newImage",mPost.image)
+                intent.putExtra("newCountries",mPost.countries)
+                intent.putExtra("newRejisser",mPost.rejisser)
+                intent.putExtra("newActors",mPost.actors)
+                intent.putExtra("before",mPost.before)
+                intent.putExtra("countOfComm",mPost.comments_count)
+                itemView.context.startActivity(intent)
+
+            }
         }
     }
 

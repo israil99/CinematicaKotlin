@@ -16,16 +16,9 @@ public class Helper {
     }
 
     public static String makeImageBest(String url) {
-        StringBuffer temp = new StringBuffer(url);
-        for (int i = temp.length() - 1; i > 0; i--) {
-            if (temp.charAt(i) == '/') {
-                temp.deleteCharAt(i + 1);
-                temp.deleteCharAt(i + 1);
-                temp.deleteCharAt(i + 1);
-                return temp.toString();
-            }
+            url = url.replace("sm_","");
+            return url;
         }
-        return temp.toString();
     }
 
-}
+

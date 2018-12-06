@@ -1,22 +1,18 @@
 package com.neobis.israil.cinematicakotlin.ui.movies
 
-import android.app.Application
-import android.content.Context
-import android.content.Intent
+
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.neobis.israil.cinematicakotlin.R
 import com.neobis.israil.cinematicakotlin.model.movies.Result
 import com.neobis.israil.cinematicakotlin.ui.movie.MoviesPresenter
 import kotlinx.android.synthetic.main.fragment_movies.*
-import java.time.Duration
 import android.support.v7.widget.GridLayoutManager
-import com.neobis.israil.cinematicakotlin.MovieDetailsActivity
+
 
 
 class MoviesFragment : Fragment(),MoviesContract.View, MoviesAdapter.Listener {
@@ -48,6 +44,9 @@ class MoviesFragment : Fragment(),MoviesContract.View, MoviesAdapter.Listener {
             presenter?.loadMovies()
 
         }
+
+
+
     }
 
 

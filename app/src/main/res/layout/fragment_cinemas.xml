@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TextView
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Cinema List"
-        android:textStyle="bold"
-        android:fontFamily="sans-serif"
-        android:textSize="32sp"
-        android:textColor="@android:color/black"
-        android:gravity="center"
+        android:layout_height="match_parent">
 
-        />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/cinema_card" />
 
-</RelativeLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>

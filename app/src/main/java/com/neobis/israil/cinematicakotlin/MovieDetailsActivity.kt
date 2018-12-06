@@ -28,6 +28,7 @@ class MovieDetailsActivity : AppCompatActivity() {
                 .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .skipMemoryCache(true)
                 .into(movie_image)
+
         movie_name?.text = name
         movie_countries?.text = countries
         movie_actors?.text = Html.fromHtml("<b>"+getString(R.string.actors)+"</b>"+actors)
